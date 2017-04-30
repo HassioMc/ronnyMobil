@@ -1,0 +1,64 @@
+<ion-view view-title="Registro Medico">
+  <ion-content>
+        <div class="bar bar-header bar-calm">
+            <h1 class="title">SEGURO MEDICO</h1>
+        </div>
+
+        <div class="list has-header">
+
+              <label class="item item-input">
+                  <span class="input-label">NIF</span>
+                  <input type="number"  placeholder="NIF" value="{{dataSearch.nif}}">
+              </label>
+
+              <label class="item item-input">
+                  <span class="input-label">NOMBRE</span>
+                  <input type="text" placeholder="NOMBRE" value="{{dataSearch.nombre}}">
+              </label>
+
+              <label class="item item-input">
+                  <span class="input-label">APELLLIDO</span>
+                  <input type="text" placeholder="PRIMER APELLIDO" value="{{dataSearch.apellido}}">
+              </label>
+
+              <label class="item item-input">
+                  <span class="input-label">EDAD</span>
+                  <input type="number" placeholder="EDAD" value="{{dataSearch.edad}}">
+              </label>
+
+              <label class="item item-input">
+                  <span class="input-label">SEXO</span>
+                  <span ng-if="dataSearch.sexo == 'H'" class="input-label">MASCULINO</span>
+                  <span ng-if="dataSearch.sexo == 'M'" class="input-label">FEMENINO</span>
+              </label>
+             
+               <ion-checkbox class="item-checkbox-right checkbox-assertive item" 
+                  ng-model="dataSearch.casado">
+                  CASADO
+                </ion-checkbox>
+              
+              <label class="item item-input">
+                  <span class="input-label">N° de Hijos</span>
+                  <input type="number" placeholder="N° de Hijos" value="{{dataSearch.hijos}}">
+              </label>
+
+              <ion-checkbox class="item-checkbox-right checkbox-assertive item"  
+                   ng-model="dataSearch.embarazada">
+                  EMBARAZADA
+                </ion-checkbox>
+
+              <label class="item item-input">
+                  <span class="input-label">FECHA</span>
+                  <span class="input-label">{{dataSearch.date | date: 'yyyy-MM-dd'}}</span>
+              </label>
+
+          </label>
+        </div>
+  </ion-content>
+  <div class="bar bar-footer">
+    <div class="button-bar bar-assertive">
+      <a class="button" ng-click="closeSearch()">REGRESAR</a>
+    </div>
+  </div>
+
+</ion-view>

@@ -1,0 +1,64 @@
+<ion-view view-title="Registro Medico">
+  <ion-content>
+    <div class="bar bar-header bar-calm">
+      <h1 class="title">SEGURO MEDICO</h1>
+    </div>
+    <div class="list has-header">
+
+          <label class="item item-input item-floating-label">
+              <span class="input-label">NIF</span>
+              <input type="number" ng-model="dataSearch.nif" placeholder="NIF" required>
+          </label>
+
+          <label class="item item-input item-floating-label">
+              <span class="input-label">NOMBRE</span>
+              <input type="text" placeholder="NOMBRE" ng-model="dataSearch.nombre" required>
+          </label>
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">APELLLIDO</span>
+            <input type="text" placeholder="PRIMER APELLIDO"ng-model="dataSearch.apellido" required>
+          </label>
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">EDAD</span>
+            <input type="number" placeholder="EDAD" ng-model="dataSearch.edad" required>
+          </label>
+
+          <label class="item item-input item-floating-label">
+              <input type="number" placeholder="SEXO">
+              <select  ng-model="dataSearch.sexo" type="checkbox">
+                <option value="H">HOMBRE</option>
+                <option value="M">MUJER</option>
+              </select>
+          </label>
+
+          <ion-checkbox class="item-checkbox-right checkbox-assertive item" 
+                  ng-model="dataSearch.casado">
+                  CASADO
+          </ion-checkbox>
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">N° de Hijos</span>
+            <input type="number" placeholder="N° de Hijos" ng-model="dataSearch.hijos" required>
+          </label>
+
+         <ion-checkbox class="item-checkbox-right checkbox-assertive item"  
+                  ng-model="dataSearch.embarazada">
+                  EMBARAZADA
+          </ion-checkbox>
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Fecha de Creacion</span>
+            <input type="date"  ng-model="dataSearch.date">
+          </label>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer">
+    <div class="button-bar bar-assertive">
+      <a class="button" ng-click="Mensaje()">REGISTRAR</a>
+      <a class="button" ng-click="doSearch()">MOSTRAR</a>
+    </div>
+  </div>
+
+</ion-view>
