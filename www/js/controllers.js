@@ -60,10 +60,11 @@ angular.module('starter.controllers', [])
   $scope.restar = function(cantidad) { $scope.contador -= cantidad; };
 })
 
-.controller('SearchCtrl', function($scope, $ionicModal) {
+.controller('SearchCtrl', function($scope, $ionicModal, $ionicPopup) {
   
 
     $scope.dataSearch = {};
+    
 
     $ionicModal.fromTemplateUrl('templates/mostrar.html',{
       scope: $scope
@@ -75,8 +76,33 @@ angular.module('starter.controllers', [])
         $scope.modal.show();
     }
 
+
     $scope.closeSearch = function(){
       $scope.modal.hide();
-    };
+    }
+    
+    
+    $scope.showPopup = function() {
+      $scope.data = {}
+    
+      // Custom popup
+      var myPopup = $ionicPopup.show({
+         template: '<input type = "text" ng-model = "data.model">',
+         title: '<b>MENSAJE<b>',
+         subTitle: '<b>EL REGISTRO FUE AGREGADO<b>',
+			
+         buttons: [
+            {
+               text: '<b>ACEPTAR</b>',
+               type: 'button-positive',
+            }
+            
+         ]
+      });
 
+      myPopup.then(function(res) {
+         console.log('Tapped!', res);
+      });    
+   };
+    
 });

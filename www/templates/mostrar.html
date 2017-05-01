@@ -7,8 +7,8 @@
         <div class="list has-header">
 
               <label class="item item-input">
-                  <span class="input-label">NIF</span>
-                  <input type="number"  placeholder="NIF" value="{{dataSearch.nif}}">
+                  <span class="input-label">N° De Ficha</span>
+                  <input type="number"  placeholder="N° DE FICHA" value="{{dataSearch.codigo}}">
               </label>
 
               <label class="item item-input">
@@ -41,18 +41,23 @@
                   <span class="input-label">N° de Hijos</span>
                   <input type="number" placeholder="N° de Hijos" value="{{dataSearch.hijos}}">
               </label>
+              
+              <label class="item item-toggle item-floating-label">
+                CIS                
+                  <label class="toggle">
+                    <input type="checkbox" ng-model="dataSearch.cis">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                  </label>
+               </label>
 
-              <ion-checkbox class="item-checkbox-right checkbox-assertive item"  
-                   ng-model="dataSearch.embarazada">
-                  EMBARAZADA
-                </ion-checkbox>
 
               <label class="item item-input">
                   <span class="input-label">FECHA</span>
-                  <span class="input-label">{{dataSearch.date | date: 'yyyy-MM-dd'}}</span>
+                  <span class="input-label">{{dataSearch.date | date: 'dd-MM-yyyy'}}</span>
               </label>
-
-          </label>
+              <img src="img/02.png" height="100%"  width="100%"></img>
         </div>
   </ion-content>
   <div class="bar bar-footer">
